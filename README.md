@@ -1,5 +1,8 @@
 # l-was
 
+Deploy custom WAS liberty app image on Openshift
+
+# User Group
 user: 1001
 group: 0
 
