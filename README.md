@@ -34,6 +34,15 @@ Git Clone l-was Reporsitory
  
 # Hands on Lab
 
+- [Pull Webpsphere Liberty Image](##pull-webpsphere-liberty-image)
+- [Build Hello World App Image](##build-hello-world-app-image)
+- [Deploy MySQL Container](#deploy-mysql-container)
+- [Deploy Daytrader Container](#deploy-daytrader-container)
+- [Monitoring](#monitoring)
+- [DayTrader App Instruction](#daytrader-app-instruction)
+- [Operational Process](#operational-process)
+- [Test Docker Volume](#test-docker-volume)
+
 ## Pull Webpsphere Liberty Image
 
 websphere-liberty - Ubuntu images with IBM Java
@@ -132,6 +141,7 @@ group: 0
 ## Exposed Port 
 
 HTTP: 9080
+
 HTTPS: 9443
 
 ## Keystore 
