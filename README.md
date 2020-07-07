@@ -34,14 +34,13 @@ Git Clone l-was Reporsitory
  
 # Hands on Lab
 
-- [Pull Webpsphere Liberty Image](##pull-webpsphere-liberty-image)
-- [Build Hello World App Image](##build-hello-world-app-image)
-- [Deploy MySQL Container](#deploy-mysql-container)
-- [Deploy Daytrader Container](#deploy-daytrader-container)
-- [Monitoring](#monitoring)
-- [DayTrader App Instruction](#daytrader-app-instruction)
+- [Pull Webpsphere Liberty Image](#pull-webpsphere-liberty-image)
+- [Build Hello World App Image](#build-hello-world-app-image)
+- [Deploy Hello World App Container](#deploy-hello-world-app-container)
+- [Verification and Monitoring](#verification-and-monitoring)
+- [Visit Hello World App](#visit-hello-world-app)
 - [Operational Process](#operational-process)
-- [Test Docker Volume](#test-docker-volume)
+
 
 ## Pull Webpsphere Liberty Image
 
