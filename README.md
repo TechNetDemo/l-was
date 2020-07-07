@@ -149,10 +149,16 @@ HTTPS: 9443
 
 
 ## Dockerfile
-FROM websphere-liberty:kernel
 
-COPY --chown=1001:0  Sample1.war /config/dropins/   # App Location
+	FROM websphere-liberty:kernel
+	
+	COPY --chown=1001:0  Sample1.war /config/dropins/   # App Location
+	
+	COPY --chown=1001:0  server.xml /config/  # Config Location
+	
+	RUN configure.sh # download runtime features from the online repository (kernel image version only)
 
-COPY --chown=1001:0  server.xml /config/  # Config Location
 
-RUN configure.sh # download runtime features from the online repository (kernel image version only)
+For more details, please visit https://github.com/WASdev/ci.docker#building-an-application-image
+
+
