@@ -145,7 +145,7 @@ HTTPS: 9443
 
 ## Keystore 
 
-/config/configDropins/defaults/keystore.xml
+	/config/configDropins/defaults/keystore.xml
 
 
 ## Dockerfile
