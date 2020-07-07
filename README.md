@@ -17,11 +17,11 @@ https://github.com/docker/toolbox/releases
 
 ## Please clone this git repository to your local machine with installed docker engine / docker toolbox
 
-For Docker Toolbox, please open Docker Quickstart Terminal.
+For Docker Toolbox, please open `Docker Quickstart Terminal`.
 
-Right click the terminal, and select "Properties"
-- enable QuickEdit Mode on Options tab
-- adjust Window Size on Layout tab
+Right click the terminal, and select `Properties`
+- enable `QuickEdit Mode` on `Options` tab
+- adjust `Window Size` on `Layout` tab
 
 
 
@@ -44,9 +44,9 @@ Git Clone l-was Reporsitory
 
 ## Pull Webpsphere Liberty Image
 
-websphere-liberty - Ubuntu images with IBM Java
+websphere-liberty - `Ubuntu images with IBM Java`
 
-ibmcom/websphere-liberty - Red Hat's Universal Base Image with additional java options  
+ibmcom/websphere-liberty - `Red Hat's Universal Base Image with additional java options`  
 
     $ docker pull ibmcom/websphere-liberty:latest
     
@@ -58,11 +58,11 @@ ibmcom/websphere-liberty - Red Hat's Universal Base Image with additional java o
     
 ## Build Hello World App Image    
     
-The format of docker images consist of username/image_name:tag_name
+The format of docker images consist of `username/image_name:tag_name`
 
-In Public Docker Registry, image naming convention is restricted to a two level hierarchy like username/image_name.
+In Public Docker Registry, image naming convention is restricted to a two level hierarchy like `username/image_name`.
 
-Docker Tag represents a specific version of image. It’s not mandatory to specify docker tag, but it will assign "latest" as tag_name when you leave it blank.
+Docker Tag represents a specific version of image. It’s not mandatory to specify docker tag, but it will assign `latest` as tag_name when you leave it blank.
 
 
     docker build -t username/image_name:tag_name .
@@ -74,9 +74,9 @@ Docker Tag represents a specific version of image. It’s not mandatory to speci
 
 Deploy Hello World App with custom Hello World App Image.
 
-As 9080 and 9443 ports may be occupied, we should publish cotainer port by mapping
-- 6080 (docker host) to 9080 (docker container)
-- 6443 (docker host) to 9443 (docker container)
+As `9080` and `9443` ports may be occupied, we should publish cotainer port by mapping
+- `6080` (docker host) to `9080` (docker container)
+- `6443` (docker host) to `9443` (docker container)
         
             
 		$ docker run -d --name l-was -p 6080:9080 -p 6443:9443 l-was/sample:1.0
@@ -133,19 +133,19 @@ Start Hello World Container
     
 ## Docker Container User Group
 
-user: 1001
+user: `1001`
 
-group: 0
+group: `0`
 
 ## Exposed Port 
 
-HTTP: 9080
+HTTP: `9080`
 
-HTTPS: 9443
+HTTPS: `9443`
 
 ## Keystore 
 
-	/config/configDropins/defaults/keystore.xml
+`/config/configDropins/defaults/keystore.xml`
 
 
 ## Dockerfile
