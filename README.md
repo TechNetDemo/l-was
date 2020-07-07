@@ -47,6 +47,9 @@ Git Clone l-was Reporsitory
 websphere-liberty - `Ubuntu images with IBM Java`
 
 ibmcom/websphere-liberty - `Red Hat's Universal Base Image with additional java options`  
+	
+	
+Pull Docker Image
 
     $ docker pull ibmcom/websphere-liberty:latest
     
