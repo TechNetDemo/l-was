@@ -95,6 +95,8 @@ Input the following information and press `Create`
 4. Go to `Pods` section and click `View Logs`.
 
 
+5. Go to `Terminal` tab, you can login to container.
+
 
 
 
