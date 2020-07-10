@@ -1,6 +1,6 @@
-# HelloWorld App with WebSphere Liberty on OCP3
+# Jenkins CI CD on OCP3
 
-In this lab, we will deploy Hello World App with WebSphere Liberty on OCP3
+In this lab, we will deploy Hello World App via Jenkins on OCP3
 
 Start OCP 3 Playground (OpenShift 3.11) - 60 mins
 
@@ -33,8 +33,8 @@ Please download files to your desktop from this repository
 Click `+ Create Project`
 
 Input the following information and press `Create` 
-- Name: `l-was`
-- Display Name: `l-was`
+- Name: `jenkins`
+- Display Name: `jenkins`
 
 
 ## Create Image Stream
