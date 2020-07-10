@@ -19,7 +19,8 @@ Login as `admin`
 - [Create Image Stream](#create-image-stream)
 - [Setup Build Config](#setup-build-config)
 - [Setup Deployment Config](#setup-deployment-config)
-- [Other Information](#other-information)
+- [Create Service](#create-service)
+- [Create Route](#create-route)
 
 
 ## Download Files
@@ -69,22 +70,27 @@ Input the following information and press `Create`
 4. Click `Applications` > `Deployments`, you can see the deployment config.
 
 
+## Create Service
 
-## Other Information
+1. Click `Add to Project` > `Import YAML / JSON`
 
-1. Go to `Topology`. 
+2. Click `Browse...`, and then select `l-was-service.yaml`
 
+3. Press `Create` > `Close`
 
-2. Click `hello-world`, and you can see hello-world deployment status.
-
-
-3. Go to `Resources` tab.
-
-
-4. Go to `Pods` section and click `View Logs`.
+4. Click `Applications` > `Services`, you can see the service for hello world pods.
 
 
-5. Go to `Terminal` tab, you can login to container.
+## Create Route
+
+1. Click `Add to Project` > `Import YAML / JSON`
+
+2. Click `Browse...`, and then select `l-was-route.yaml`
+
+3. Press `Create` > `Close`
+
+4. Click `Applications` > `Routes`, you can see the route of hello world service.
+
 
 
 
