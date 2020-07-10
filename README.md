@@ -14,11 +14,16 @@ Login as `admin`
 
 
 # Hands on Lab
-
+- [Download Files](#download-files)
 - [Create Openshift Project](#create-openshift-project)
 - [Deploy Hello World from Dockerfile](#deploy-hello-world-from-dockerfile)
 - [Visit Deployed App](#visit-deployed-app)
 - [Other Information](#other-information)
+
+
+## Download Files
+
+Please download files to your desktop from this repository
 
 
 ## Create Openshift Project
@@ -30,22 +35,13 @@ Input the following information and press `Create`
 - Display Name: `l-was`
 
 
-## Deploy Hello World from Dockerfile
+## Create Image Stream
 
-Click `+Add`
+Click `Add to Project` > `Import YAML / JSON`
 
-Click `From Dockerfile`
+Click `Browse...`, and then select `l-was-image_stream.yaml`
 
-Input the following information and press `Create`
-- Git Repo URL: `https://github.com/TechNetDemo/l-was.git`
-- `Show Advanced Git Options`
-- Git Reference: `ocp4`
-- Container Port: `9080`
-- Application Name: `hello-world`
-- Name: `hello-world`
-- `Routing`
-- Path: `/sample`
-- Target Port: `9080`
+Press `Create`
 
 
 ## View Build Logs
