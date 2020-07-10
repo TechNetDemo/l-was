@@ -15,6 +15,7 @@ Login as `admin`
 
 # Hands on Lab
 - [Create Openshift Project](#create-openshift-project)
+- [Configure l-was Project](#configure-l\-was-project)
 - [Deploy Jenkins](#deploy-jenkins)
 - [Setup Build Config](#setup-build-config)
 - [Setup Deployment Config](#setup-deployment-config)
@@ -41,34 +42,45 @@ Input the following information and press `Create`
 - Name: `l-was`
 - Display Name: `l-was`
 
-### Start Hands on Lab on Jenkins Project
 
-Go to project `jenkins`
+## Configure l-was Project
+
+1. Go to project `l-was`
+
+2. Go to `Resources` > `Membership`
+
+3. Click `Edit Membership`
+
+4. Input the following information and press `Done Editing`
+    - Name: `system:serviceaccounts:jenkins`
+    - Select a role: `admin`
 
 
 ## Deploy Jenkins
 
-1. Click `Catalog`
+1. Go to project `jenkins`
 
-2. Select `Jenkins`
+2. Click `Catalog`
 
-3. Press `Next`
+3. Select `Jenkins`
 
-4. Input the following information and press `Next` 
+4. Press `Next`
+
+5. Input the following information and press `Next` 
   - Memory Limit: `2Gi`
   - Volume Capacity: `10Gi`
   
-5. Select `Create a secret in jenkins to be used later` and press `Create`
+6. Select `Create a secret in jenkins to be used later` and press `Create`
 
-6. Press `Close`
+7. Press `Close`
 
-7. Go to `Overview`
+8. Go to `Overview`
 
-8. When Jenkins deployment completes, go to the link under `Routes - External Traffic`
+9. When Jenkins deployment completes, go to the link under `Routes - External Traffic`
 
-9. Login as `admin`
+10. Login as `admin`
 
-10. Click `Allow selected permissions`
+11. Click `Allow selected permissions`
 
 
 ## Setup Build Config
