@@ -36,6 +36,8 @@ Input the following information and press `Create`
 - Name: `jenkins`
 - Display Name: `jenkins`
 
+Go to project `jenkins`
+
 
 ## Create Image Stream
 
