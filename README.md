@@ -21,7 +21,7 @@ Login as `admin`
 - [Setup Deployment Config](#setup-deployment-config)
 - [Create Service](#create-service)
 - [Create Route](#create-route)
-
+- [Start Build](#start-build)
 
 ## Download Files
 
@@ -92,7 +92,19 @@ Input the following information and press `Create`
 4. Click `Applications` > `Routes`, you can see the route of hello world service.
 
 
+## Start Build
 
+1. Go to `Builds` > `Builds`
+
+2. Click `hello-world-build`
+
+3. Click `Start Build`
+
+4. Click `View Log` to see the details
+
+5. After build success, click `Overview` to see the deployment
+
+6. After deploy success, click the route under `Routes - External Traffic` to visit hello world app
 
 
 
