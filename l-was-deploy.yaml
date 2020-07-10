@@ -24,22 +24,15 @@ spec:
           name: 'hello-world:latest'
     - type: ConfigChange
   replicas: 1
-  revisionHistoryLimit: 10
-  test: false
   selector:
-    app: hello-world
-    deploymentconfig: hello-world
+    name: hello-world
   template:
     metadata:
       labels:
-        app: hello-world
-        deploymentconfig: hello-world
+        name: hello-world
     spec:
       containers:
         - name: hello-world
-          ports:
-            containerPort: 9080
-            protocol: 'TCP'
           image: 'hello-world:latest'
           resources: {}
           terminationMessagePath: /dev/termination-log
