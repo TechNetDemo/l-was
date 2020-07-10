@@ -15,4 +15,4 @@ spec:
   output:
     to:
       kind: "ImageStreamTag"
-      name: "hello-world:1.0.0"
+      name: "hello-world:latest"
