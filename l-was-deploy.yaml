@@ -37,6 +37,9 @@ spec:
     spec:
       containers:
         - name: hello-world
+          ports:
+            containerPort: 9080
+            protocol: 'TCP'
           image: 'hello-world:latest'
           resources: {}
           terminationMessagePath: /dev/termination-log
