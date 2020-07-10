@@ -1,7 +1,7 @@
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
-  name: l-was-build
+  name: hello-world-build
   namespace: l-was
 spec:
   source:
