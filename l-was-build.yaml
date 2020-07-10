@@ -1,0 +1,13 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: l-was-build
+  namespace: l-was
+spec:
+  source:
+    git:
+      uri: 'https://github.com/TechNetDemo/l-was'
+    type: Git
+  strategy:
+    dockerStrategy:
+      dockerfilePath: Dockerfile
