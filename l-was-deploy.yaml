@@ -1,0 +1,47 @@
+kind: DeploymentConfig
+apiVersion: apps.openshift.io/v1
+metadata:
+  name: hello-world
+  namespace: l-was
+spec:
+  strategy:
+    type: Rolling
+    rollingParams:
+      updatePeriodSeconds: 1
+      intervalSeconds: 1
+      timeoutSeconds: 600
+      maxUnavailable: 25%
+      maxSurge: 25%
+  triggers:
+    - type: ImageChange
+      imageChangeParams:
+        automatic: true
+        containerNames:
+          - hello-world
+        from:
+          kind: ImageStreamTag
+          namespace: l-was
+          name: 'hello-world:latest'
+    - type: ConfigChange
+  replicas: 1
+  revisionHistoryLimit: 10
+  test: false
+  selector:
+    app: hello-world
+    deploymentconfig: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+        deploymentconfig: hello-world
+    spec:
+      containers:
+        - name: hello-world
+          image: 'hello-world:latest'
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: Always
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
