@@ -4,7 +4,7 @@ In this lab, we will deploy Hello World App with WebSphere Liberty on OCP3
 
 Start OCP 3 Playground (OpenShift 3.11) - 60 mins
 
-Go to `https://www.katacoda.com/openshift/courses/playgrounds/openshift311`
+Go to `https://learn.openshift.com/playgrounds/openshift311/`
 
 Click `START SENARIO`
 
@@ -16,8 +16,9 @@ Login as `admin`
 # Hands on Lab
 - [Download Files](#download-files)
 - [Create Openshift Project](#create-openshift-project)
-- [Deploy Hello World from Dockerfile](#deploy-hello-world-from-dockerfile)
-- [Visit Deployed App](#visit-deployed-app)
+- [Create Image Stream](#create-image-stream)
+- [Setup Build Config](#setup-build-config)
+- [Setup Deployment Config](#setup-deployment-config)
 - [Other Information](#other-information)
 
 
@@ -37,39 +38,35 @@ Input the following information and press `Create`
 
 ## Create Image Stream
 
-Click `Add to Project` > `Import YAML / JSON`
+1. Click `Add to Project` > `Import YAML / JSON`
 
-Click `Browse...`, and then select `l-was-image_stream.yaml`
+2. Click `Browse...`, and then select `l-was-image_stream.yaml`
 
-Press `Create`
+3. Press `Create` > `Close`
 
-
-## View Build Logs
-
-1. Go to `Topology`. 
+4. Click `Builds` > `Images`, you can see the created images stream.
 
 
-2. Click `hello-world`, and you can see hello-world build status.
+## Setup Build Config
+
+1. Click `Add to Project` > `Import YAML / JSON`
+
+2. Click `Browse...`, and then select `l-was-build.yaml`
+
+3. Press `Create` > `Close`
+
+4. Click `Builds` > `Builds`, you can see the build config.
 
 
-3. Go to `Resources` tab.
+## Setup Deployment Config
 
+1. Click `Add to Project` > `Import YAML / JSON`
 
-4. Go to `Builds` section and click `View Logs`.
+2. Click `Browse...`, and then select `l-was-deploy.yaml`
 
+3. Press `Create` > `Close`
 
-## Visit Deployed App
-
-1. Go to `Topology`. 
-
-
-2. Click `hello-world`, and you can see hello-world deployment status.
-
-
-3. Go to `Resources` tab.
-
-
-4. Click the link provided on `Routes` section.
+4. Click `Applications` > `Deployments`, you can see the deployment config.
 
 
 
