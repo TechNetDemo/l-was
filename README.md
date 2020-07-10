@@ -52,6 +52,12 @@ Go to project `jenkins`
 
 7. Go to `Overview`
 
+8. When Jenkins deployment completes, go to the link under `Routes - External Traffic`
+
+9. Login as `admin`
+
+10. Click `Allow selected permissions`
+
 
 ## Setup Build Config
 
