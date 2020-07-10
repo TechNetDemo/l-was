@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-service     
+spec:
+  selector:                  
+    name: hello-world
+  ports:
+  - name: 9080-tcp
+    port: 9080               
+    protocol: TCP
+    targetPort: 9080     
