@@ -1,7 +1,8 @@
 apiVersion: service.openshift.io/v1
 kind: Service
 metadata:
-  name: hello-world-service     
+  name: hello-world-service
+  namespace: l-was
 spec:
   selector:                  
     name: hello-world
