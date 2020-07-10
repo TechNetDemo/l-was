@@ -14,18 +14,13 @@ Login as `admin`
 
 
 # Hands on Lab
-- [Download Files](#download-files)
 - [Create Openshift Project](#create-openshift-project)
-- [Create Image Stream](#create-image-stream)
+- [Deploy Jenkins](#deploy-jenkins)
 - [Setup Build Config](#setup-build-config)
 - [Setup Deployment Config](#setup-deployment-config)
 - [Create Service](#create-service)
 - [Create Route](#create-route)
 - [Start Build](#start-build)
-
-## Download Files
-
-Please download files to your desktop from this repository
 
 
 ## Create Openshift Project
@@ -39,15 +34,23 @@ Input the following information and press `Create`
 Go to project `jenkins`
 
 
-## Create Image Stream
+## Deploy Jenkins
 
-1. Click `Add to Project` > `Import YAML / JSON`
+1. Click `Catalog`
 
-2. Click `Browse...`, and then select `l-was-image_stream.yaml`
+2. Select `Jenkins`
 
-3. Press `Create` > `Close`
+3. Press `Next`
 
-4. Click `Builds` > `Images`, you can see the created images stream.
+4. Input the following information and press `Next` 
+  - Memory Limit: `2Gi`
+  - Volume Capacity: `10Gi`
+  
+5. Select `Create a secret in jenkins to be used later` and press `Create`
+
+6. Press `Close`
+
+7. Go to `Overview`
 
 
 ## Setup Build Config
