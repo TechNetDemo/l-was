@@ -15,4 +15,4 @@ spec:
   output:
     to:
       kind: "ImageStreamTag"
-      name: "hello-world:{.metadata.annotations.openshift.io/build.number}"
+      name: "hello-world:1.0.0"
