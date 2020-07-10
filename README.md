@@ -25,11 +25,23 @@ Login as `admin`
 
 ## Create Openshift Project
 
+### Create Jenkins Project
+
 Click `+ Create Project`
 
 Input the following information and press `Create` 
 - Name: `jenkins`
 - Display Name: `jenkins`
+
+### Craete l-was Project
+
+Click `+ Create Project`
+
+Input the following information and press `Create` 
+- Name: `jenkins`
+- Display Name: `jenkins`
+
+### Start Hands on Lab on Jenkins Project
 
 Go to project `jenkins`
 
