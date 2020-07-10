@@ -5,6 +5,7 @@ metadata:
   namespace: l-was
 spec:
   source:
+    ref: ocp3
     git:
       uri: 'https://github.com/TechNetDemo/l-was'
     type: Git
