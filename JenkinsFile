@@ -1,12 +1,21 @@
+def project_name = 'l-was'
+
 pipeline {
-  agent {
-    label 'master'
-  }
-  stages {
-    stage('Environment Setup') {
-      steps {
-        
-      }
+    agent {
+        label 'master'
     }
-  }
+    stages {
+        stage('Environment Setup') {
+            steps {
+                script {
+                    openshift.withCluster() {
+                        if(!openshift.selector('project', project_name).exists()) {
+                            echo "Create Project ${project_name}"
+                            openshift.newProject(project_name)
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
