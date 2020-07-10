@@ -12,3 +12,7 @@ spec:
   strategy:
     dockerStrategy:
       dockerfilePath: Dockerfile
+  output:
+    to:
+      kind: "ImageStreamTag"
+      name: "hello-world:latest"
