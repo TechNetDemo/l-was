@@ -1,2 +1,3 @@
 FROM ibmcom/websphere-liberty:latest
-COPY --chown=1001:0 sample.war /config/dropins/
+COPY sample.war /config/dropins/
+RUN sudo chown -R 1001:0 /config/dropins/
