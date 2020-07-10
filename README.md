@@ -36,6 +36,7 @@ Input the following information and press `Create`
 - Name: `l-was`
 - Display Name: `l-was`
 
+Go to project `l-was`
 
 ## Create Image Stream
 
