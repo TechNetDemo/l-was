@@ -5,8 +5,8 @@ metadata:
     pipeline.alpha.openshift.io/uses: '[{"name": "jenkins", "namespace": "", "kind": "DeploymentConfig"}]'
   labels:
     name: jenkins
-  name: demo
-  namespace: cicd
+  name: l-was-pipeline
+  namespace: jenkins
 spec:
   failedBuildsHistoryLimit: 5
   nodeSelector: {}
