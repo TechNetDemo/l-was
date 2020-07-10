@@ -38,8 +38,8 @@ Input the following information and press `Create`
 Click `+ Create Project`
 
 Input the following information and press `Create` 
-- Name: `jenkins`
-- Display Name: `jenkins`
+- Name: `l-was`
+- Display Name: `l-was`
 
 ### Start Hands on Lab on Jenkins Project
 
