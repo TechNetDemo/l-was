@@ -62,7 +62,7 @@ Input the following information and press `Create`
 
 ## Deploy Jenkins
 
-1. Go to project `jenkins`
+1. Go back to opensfhit project `jenkins`
 
 2. Click `Catalog`
 
