@@ -19,12 +19,11 @@ pipeline {
         label 'master'
     }
     stages {
-        stage('Download Source From Git') {
+        /*stage('Download Source From Git') {
             steps {
-	    	sh "rm -rf *"
-                //git branch: GIT_BRANCH, url: GIT_URL
+                git branch: GIT_BRANCH, url: GIT_URL
             }
-        }
+        }*/
 	    stage('Build') {
 		    steps {
 			    script {
