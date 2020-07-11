@@ -16,10 +16,11 @@ spec:
   runPolicy: Serial
   source:
     git:
-      uri: 'http://gitlab-ce.13.94.25.165.nip.io/root/demo.git'
+      uri: 'https://github.com/TechNetDemo/l-was.git'
+      ref: ocp3-jenkins
     type: Git
   strategy:
     jenkinsPipelineStrategy:
-      jenkinsfilePath: jenkinsfile
+      jenkinsfilePath: JenkinsFile
     type: JenkinsPipeline
   successfulBuildsHistoryLimit: 5
