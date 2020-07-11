@@ -91,32 +91,32 @@ Input the following information and press `Create`
 
 2. Click `Browse...`, and then input 
         
-        apiVersion: build.openshift.io/v1
-        kind: BuildConfig
-        metadata:
-            annotations:
-                pipeline.alpha.openshift.io/uses: '[{"name": "jenkins", "namespace": "", "kind": "DeploymentConfig"}]'
-            labels:
-                name: jenkins
-            name: l-was-pipeline
-            namespace: jenkins
-        spec:
-            failedBuildsHistoryLimit: 5
-            nodeSelector: {}
-            output: {}
-            postCommit: {}
-            resources: {}
-            runPolicy: Serial
-            source:
-                git:
-                uri: 'https://github.com/TechNetDemo/l-was.git'
-                ref: ocp3-jenkins
-                type: Git
-            strategy:
-                jenkinsPipelineStrategy:
-                jenkinsfilePath: JenkinsFile
-                type: JenkinsPipeline
-            successfulBuildsHistoryLimit: 5
+       apiVersion: build.openshift.io/v1
+       kind: BuildConfig
+       metadata:
+        annotations:
+         pipeline.alpha.openshift.io/uses: '[{"name": "jenkins", "namespace": "", "kind": "DeploymentConfig"}]'
+        labels:
+         name: jenkins
+        name: l-was-pipeline
+        namespace: jenkins
+       spec:
+        failedBuildsHistoryLimit: 5
+        nodeSelector: {}
+        output: {}
+        postCommit: {}
+        resources: {}
+        runPolicy: Serial
+        source:
+         git:
+          uri: 'https://github.com/TechNetDemo/l-was.git'
+          ref: ocp3-jenkins
+         type: Git
+        strategy:
+         jenkinsPipelineStrategy:
+          jenkinsfilePath: JenkinsFile
+         type: JenkinsPipeline
+        successfulBuildsHistoryLimit: 5
 
 3. Press `Create` > `Close`
 
