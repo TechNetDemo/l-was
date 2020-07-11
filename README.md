@@ -94,12 +94,12 @@ Input the following information and press `Create`
         apiVersion: build.openshift.io/v1
         kind: BuildConfig
         metadata:
-        annotations:
-            pipeline.alpha.openshift.io/uses: '[{"name": "jenkins", "namespace": "", "kind": "DeploymentConfig"}]'
-        labels:
-            name: jenkins
-        name: l-was-pipeline
-        namespace: jenkins
+            annotations:
+                pipeline.alpha.openshift.io/uses: '[{"name": "jenkins", "namespace": "", "kind": "DeploymentConfig"}]'
+            labels:
+                name: jenkins
+            name: l-was-pipeline
+            namespace: jenkins
         spec:
         failedBuildsHistoryLimit: 5
         nodeSelector: {}
