@@ -18,6 +18,7 @@ Login as `admin`
 - [Configure l-was Project](#configure-l\-was-project)
 - [Deploy Jenkins](#deploy-jenkins)
 - [Start Jenkins Pipeline](#start-jenkins-pipeline)
+- [Visit Hello World App](#visit-hello-world-app)
 
 
 ## Create Openshift Project
@@ -132,4 +133,10 @@ Input the following information and press `Create`
 4. Click `View Log` to see details
 
 
+## Visit Hello World App
 
+1. Go to project `l-was`
+
+2. Go to `Overview`
+
+3. Click the link under `Routes - External Traffic`
