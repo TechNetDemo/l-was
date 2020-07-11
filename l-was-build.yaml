@@ -1,4 +1,4 @@
-apiVersion: build.openshift.io/v1
+apiVersion: v1
 kind: BuildConfig
 metadata:
   name: hello-world-build
@@ -6,7 +6,7 @@ metadata:
 spec:
   source:
     git:
-      ref: ocp3
+      ref: ocp3-jenkins
       uri: 'https://github.com/TechNetDemo/l-was'
     type: Git
   strategy:
