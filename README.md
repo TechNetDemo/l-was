@@ -17,11 +17,7 @@ Login as `admin`
 - [Create Openshift Project](#create-openshift-project)
 - [Configure l-was Project](#configure-l\-was-project)
 - [Deploy Jenkins](#deploy-jenkins)
-- [Setup Build Config](#setup-build-config)
-- [Setup Deployment Config](#setup-deployment-config)
-- [Create Service](#create-service)
-- [Create Route](#create-route)
-- [Start Build](#start-build)
+- [Start Jenkins Pipeline](#start-jenkins-pipeline)
 
 
 ## Create Openshift Project
@@ -125,52 +121,15 @@ Input the following information and press `Create`
 4. Click `Builds` > `Pipelines`, you can see the Jenkins Pipeline.
 
 
-## Setup Deployment Config
+## Start Jenkins Pipeline
 
-1. Click `Add to Project` > `Import YAML / JSON`
+1. Go to project `jenkins`
 
-2. Click `Browse...`, and then select `l-was-deploy.yaml`
+2. Go to `Builds` > `Pipelines`
 
-3. Press `Create` > `Close`
+3. Press `Start Pipeline`
 
-4. Click `Applications` > `Deployments`, you can see the deployment config.
-
-
-## Create Service
-
-1. Click `Add to Project` > `Import YAML / JSON`
-
-2. Click `Browse...`, and then select `l-was-service.yaml`
-
-3. Press `Create` > `Close`
-
-4. Click `Applications` > `Services`, you can see the service for hello world pods.
-
-
-## Create Route
-
-1. Click `Add to Project` > `Import YAML / JSON`
-
-2. Click `Browse...`, and then select `l-was-route.yaml`
-
-3. Press `Create` > `Close`
-
-4. Click `Applications` > `Routes`, you can see the route of hello world service.
-
-
-## Start Build
-
-1. Go to `Builds` > `Builds`
-
-2. Click `hello-world-build`
-
-3. Click `Start Build`
-
-4. Click `View Log` to see the details
-
-5. After build success, click `Overview` to see the deployment
-
-6. After deploy success, click the route under `Routes - External Traffic` to visit hello world app
+4. Click `View Log` to see details
 
 
 
