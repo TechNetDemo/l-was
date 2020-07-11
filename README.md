@@ -101,22 +101,22 @@ Input the following information and press `Create`
             name: l-was-pipeline
             namespace: jenkins
         spec:
-        failedBuildsHistoryLimit: 5
-        nodeSelector: {}
-        output: {}
-        postCommit: {}
-        resources: {}
-        runPolicy: Serial
-        source:
-            git:
-            uri: 'https://github.com/TechNetDemo/l-was.git'
-            ref: ocp3-jenkins
-            type: Git
-        strategy:
-            jenkinsPipelineStrategy:
-            jenkinsfilePath: JenkinsFile
-            type: JenkinsPipeline
-        successfulBuildsHistoryLimit: 5
+            failedBuildsHistoryLimit: 5
+            nodeSelector: {}
+            output: {}
+            postCommit: {}
+            resources: {}
+            runPolicy: Serial
+            source:
+                git:
+                uri: 'https://github.com/TechNetDemo/l-was.git'
+                ref: ocp3-jenkins
+                type: Git
+            strategy:
+                jenkinsPipelineStrategy:
+                jenkinsfilePath: JenkinsFile
+                type: JenkinsPipeline
+            successfulBuildsHistoryLimit: 5
 
 3. Press `Create` > `Close`
 
