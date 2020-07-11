@@ -85,15 +85,42 @@ Input the following information and press `Create`
 11. Click `Allow selected permissions`
 
 
-## Setup Build Config
+## Create Jenkins Pipeline
 
 1. Click `Add to Project` > `Import YAML / JSON`
 
-2. Click `Browse...`, and then select `l-was-build.yaml`
+2. Click `Browse...`, and then input 
+        
+        apiVersion: build.openshift.io/v1
+        kind: BuildConfig
+        metadata:
+        annotations:
+            pipeline.alpha.openshift.io/uses: '[{"name": "jenkins", "namespace": "", "kind": "DeploymentConfig"}]'
+        labels:
+            name: jenkins
+        name: l-was-pipeline
+        namespace: jenkins
+        spec:
+        failedBuildsHistoryLimit: 5
+        nodeSelector: {}
+        output: {}
+        postCommit: {}
+        resources: {}
+        runPolicy: Serial
+        source:
+            git:
+            uri: 'https://github.com/TechNetDemo/l-was.git'
+            ref: ocp3-jenkins
+            type: Git
+        strategy:
+            jenkinsPipelineStrategy:
+            jenkinsfilePath: JenkinsFile
+            type: JenkinsPipeline
+        successfulBuildsHistoryLimit: 5
 
 3. Press `Create` > `Close`
 
-4. Click `Builds` > `Builds`, you can see the build config.
+4. Click `Builds` > `Pipeline`, you can see the Jenkins Pipeline.
 
 
 ## Setup Deployment Config
