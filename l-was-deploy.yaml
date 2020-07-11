@@ -12,6 +12,15 @@ spec:
       timeoutSeconds: 600
       maxUnavailable: 25%
       maxSurge: 25%
+  triggers:
+    - imageChangeParams:
+        containerNames:
+          - hello-world
+        from:
+          kind: ImageStreamTag
+          name: 'hello-world:latest'
+          namespace: l-was
+      type: ImageChange
   replicas: 1
   selector:
     name: hello-world
