@@ -120,7 +120,7 @@ Input the following information and press `Create`
 
 3. Press `Create` > `Close`
 
-4. Click `Builds` > `Pipeline`, you can see the Jenkins Pipeline.
+4. Click `Builds` > `Pipelines`, you can see the Jenkins Pipeline.
 
 
 ## Setup Deployment Config
