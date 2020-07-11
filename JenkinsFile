@@ -1,20 +1,81 @@
-def project_name = 'l-was'
+def OC_PROJECT = 'l-was'
+def OC_IMAGE_STREAM = 'hello-world'
+def OC_IMAGE_STREAM_YAML = "l-was-image_stream.yaml"
+def OC_BUILD_CONFIG = 'hello-world-build'
+def OC_BUILD_CONFIG_YAML = 'l-was-build.yaml'
+def OC_DEPLOY_CONFIG = 'hello-world'
+def OC_DEPLOY_CONFIG_YAML = 'l-was-deploy.yaml'
+def OC_SERVICE = 'hello-world-service'
+def OC_SERVICE_YAML = 'l-was-service.yaml'
+def OC_ROUTE = 'hello-world-route'
+def OC_ROUTE_YAML = 'l-was-route.yaml'
+
+def GIT_BRANCH = 'ocp3-jenkins'
+def GIT_URL = "https://github.com/TechNetDemo/l-was.git"
+
 
 pipeline {
     agent {
         label 'master'
     }
     stages {
-        stage('Environment Setup') {
+        stage('Download Source From Git') {
             steps {
-                script {
-                    openshift.withCluster() {
-                        openshift.withProject(project_name) {
-                            echo "Create Project ${project_name}"
-                        }
-                    }
-                }
+                git branch: GIT_BRANCH, url: GIT_URL
             }
         }
+	    stage('Build') {
+		    steps {
+			    script {
+				    openshift.withCluster() {
+					    openshift.withProject(OC_PROJECT) {
+					        // Create Image Stream
+                            if (!openshift.selector('imagestream', OC_IMAGE_STREAM).exists()) {
+                                echo "Create Image Stream: ${OC_IMAGE_STREAM} in Project ${OC_PROJECT}"
+                                openshift.create(readFile(OC_IMAGE_STREAM_YAML))
+                            }
+                            // Craete Build Config
+                            if (!openshift.selector('bc', OC_BUILD_CONFIG).exists()) {
+                                echo "Create Build Config: ${OC_BUILD_CONFIG} in Project ${OC_PROJECT}"
+                                openshift.create(readFile(OC_BUILD_CONFIG_YAML))
+                            }
+                            // Start Build
+                            echo "Start Build: ${OC_BUILD_CONFIG}"
+					        openshift.selector("bc", OC_BUILD_CONFIG).startBuild("--follow")
+					    }
+				    }
+			    }
+		    }
+	    }
+	    stage('Deploy') {
+	        steps {
+	            script {
+	                openshift.withCluster() {
+                        openshift.withProject(OC_PROJECT) {
+ 			                // Create Deploy Config
+			                if (!openshift.selector('dc', OC_DEPLOY_CONFIG).exists()) {
+                                echo "Create Deploy Config: ${OC_DEPLOY_CONFIG} in Project ${OC_PROJECT}"
+                                openshift.create(readFile(OC_DEPLOY_CONFIG_YAML))
+                            }
+			                // Create Service
+			                if (!openshift.selector('service', OC_SERVICE).exists()) {
+                                echo "Create Service: ${OC_SERVICE} in Project ${OC_PROJECT}"
+                                openshift.create(readFile(OC_SERVICE_YAML))
+                            }
+			                // Create Route
+			                if (!openshift.selector('route', OC_ROUTE).exists()) {
+                                echo "Create Route: ${OC_ROUTE} in Project ${OC_PROJECT}"
+                                openshift.create(readFile(OC_ROUTE_YAML))
+                            }
+                            // Run Deployment
+                            echo "Run Deployment"
+                            def app = openshift.selector("dc", OC_DEPLOY_CONFIG)
+                            app.rollout().latest()
+                            app.rollout().status()
+                        }
+                    }
+	            }
+	        }
+	    }
     }
 }
