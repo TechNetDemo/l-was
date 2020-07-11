@@ -21,7 +21,8 @@ pipeline {
     stages {
         stage('Download Source From Git') {
             steps {
-                git branch: GIT_BRANCH, url: GIT_URL
+	    	sh "rm -rf *"
+                //git branch: GIT_BRANCH, url: GIT_URL
             }
         }
 	    stage('Build') {
