@@ -39,10 +39,6 @@ pipeline {
                                 echo "Create Build Config: ${OC_BUILD_CONFIG} in Project ${OC_PROJECT}"
                                 openshift.create(readFile(OC_BUILD_CONFIG_YAML))
                             }
-			    else {
-			    	echo "Update Build Config: ${OC_BUILD_CONFIG} in Project ${OC_PROJECT}"
-                  		openshift.replace(readFile(OC_BUILD_CONFIG_YAML))
-                	    }
                             // Start Build
                             echo "Start Build: ${OC_BUILD_CONFIG}"
 					        openshift.selector("bc", OC_BUILD_CONFIG).startBuild("--follow")
@@ -61,28 +57,16 @@ pipeline {
                                 echo "Create Deploy Config: ${OC_DEPLOY_CONFIG} in Project ${OC_PROJECT}"
                                 openshift.create(readFile(OC_DEPLOY_CONFIG_YAML))
                             }
-			    else {
-			    	echo "Update Deploy Config: ${OC_DEPLOY_CONFIG} in Project ${OC_PROJECT}"
-                  		openshift.replace(readFile(OC_DEPLOY_CONFIG_YAML))
-                	    }
 			                // Create Service
 			                if (!openshift.selector('service', OC_SERVICE).exists()) {
                                 echo "Create Service: ${OC_SERVICE} in Project ${OC_PROJECT}"
                                 openshift.create(readFile(OC_SERVICE_YAML))
                             }
-			    else {
-			    	echo "Update Service: ${OC_SERVICE} in Project ${OC_PROJECT}"
-                  		openshift.replace(readFile(OC_SERVICE_YAML))
-                	    }
 			                // Create Route
 			                if (!openshift.selector('route', OC_ROUTE).exists()) {
                                 echo "Create Route: ${OC_ROUTE} in Project ${OC_PROJECT}"
                                 openshift.create(readFile(OC_ROUTE_YAML))
                             }
-			    else {
-			    	echo "Update Route: ${OC_ROUTE} in Project ${OC_PROJECT}"
-                  		openshift.replace(readFile(OC_ROUTE_YAML))
-                	    }
                             // Run Deployment
                             echo "Run Deployment"
                             def app = openshift.selector("dc", OC_DEPLOY_CONFIG)
