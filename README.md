@@ -49,13 +49,15 @@ Input the following information and press `Create`
 
 2. Go to `Resources` > `Membership`
 
-3. Click `Edit Membership`
+3. Go to `Groups` tab
 
-4. Input the following information
+4. Click `Edit Membership`
+
+5. Input the following information
     - Name: `system:serviceaccounts:jenkins`
     - Select a role: `admin`
 
-5. Press `Add` > `Done Editing`
+6. Press `Add` > `Done Editing`
 
 
 ## Deploy Jenkins
